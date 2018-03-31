@@ -1,4 +1,5 @@
 package com.github.Hryzalka.adventura.logika;
+
 /**
  *  Třída implementující toto rozhraní bude ve hře zpracovávat jeden konkrétní příkaz.
  *  Toto rozhraní je součástí jednoduché textové hry.

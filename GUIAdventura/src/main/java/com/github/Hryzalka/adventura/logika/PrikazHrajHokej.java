@@ -1,5 +1,6 @@
 package com.github.Hryzalka.adventura.logika;
 
+
 /**
 /* Soubor je ulozen v kodovani UTF-8.
  * Kontrola kódování: Příliš žluťoučký kůň úpěl ďábelské ódy. */

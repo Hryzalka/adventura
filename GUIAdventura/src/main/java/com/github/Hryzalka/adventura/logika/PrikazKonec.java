@@ -1,4 +1,5 @@
 package com.github.Hryzalka.adventura.logika;
+
 /**
  *  Třída PrikazKonec implementuje pro hru příkaz konec.
  *  Tato třída je součástí jednoduché textové hry.
