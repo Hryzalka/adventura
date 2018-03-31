@@ -1,3 +1,4 @@
+import com.github.Hryzalka.adventura.logika.Hra;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

@@ -1,4 +1,6 @@
 
+import com.github.Hryzalka.adventura.logika.Vec;
+import com.github.Hryzalka.adventura.logika.Prostor;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

@@ -2,6 +2,8 @@
  * Kontrola kódování: Příliš žluťoučký kůň úpěl ďábelské ódy. */
 
 
+import com.github.Hryzalka.adventura.logika.Vec;
+import com.github.Hryzalka.adventura.logika.Batoh;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
