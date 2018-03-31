@@ -1,4 +1,5 @@
 package com.github.Hryzalka.adventura.logika;
+
 /* Soubor je ulozen v kodovani UTF-8.
  * Kontrola kódování: Příliš žluťoučký kůň úpěl ďábelské ódy. */
 
@@ -17,6 +18,7 @@ public class Vec
 
     private String nazev;
     private boolean sebratelna;
+    private String obrazek;
     
        
     //== Konstruktory a tovární metody =============================================
@@ -27,10 +29,11 @@ public class Vec
      *  @param nazev        název nové věci
      *  @param sebratelna   true, pokud bude moci věc vložit do batohu
      */
-    public Vec(String nazev, boolean sebratelna)
+    public Vec(String nazev, boolean sebratelna,String obrazek)
     {
         this.nazev = nazev;
         this.sebratelna = sebratelna;
+        this.obrazek = obrazek;
     }
 
     //== Nesoukromé metody (instancí i třídy) ======================================
@@ -53,4 +56,11 @@ public class Vec
         return this.sebratelna;
     }
 
+    public String getObrazek() {
+        return obrazek;
+    }
+
+    
+    
+    
 }

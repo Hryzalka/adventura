@@ -1,4 +1,5 @@
 package com.github.Hryzalka.adventura.logika;
+
 /* Soubor je ulozen v kodovani UTF-8.
  * Kontrola kódování: Příliš žluťoučký kůň úpěl ďábelské ódy. */
 
@@ -104,6 +105,12 @@ public class Batoh
         }
         return hledana;
     }
+
+    public List<Vec> getObsah() {
+        return obsah;
+    }
+    
+    
     
     /**
      * Odstraní věci z inventáře

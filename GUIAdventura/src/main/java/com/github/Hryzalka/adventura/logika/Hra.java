@@ -1,4 +1,5 @@
 package com.github.Hryzalka.adventura.logika;
+
 /**
  *  Třída Hra - třída představující logiku adventury.
  * 

@@ -1,5 +1,8 @@
 package com.github.Hryzalka.adventura.logika;
 
+import java.util.Observable;
+
+
 /**
  *  Class HerniPlan - třída představující mapu a stav adventury.
  * 
@@ -20,7 +23,7 @@ package com.github.Hryzalka.adventura.logika;
  *@author     Aleš Sedlák
  *@version    2017
  */
-public class HerniPlan {
+public class HerniPlan extends Observable{
     
     private Prostor aktualniProstor;
     private Batoh batoh;
@@ -76,23 +79,23 @@ public class HerniPlan {
         switch (nazev) {
             case "domov":
                 prostor = new Prostor("domov","doma", 
-                "\nVýchozí prostor, ze kterého vyrážíte hrát hokej");
+                "\nVýchozí prostor, ze kterého vyrážíte hrát hokej",100,210);
                 break;
             case "namesti":
                 prostor = new Prostor("namesti", "na náměstí", 
-                "\nSpojovací prostor, ze kterého můžete jít do všech ostatních prostorů.");
+                "\nSpojovací prostor, ze kterého můžete jít do všech ostatních prostorů.",100,120);
                 break;
             case "jidelna":
                 prostor = new Prostor("jidelna", "v jídelně",
-                "\nProstor, kde je nezbytné sebrat redBull a steak před tím, než vyrazíte na led");
+                "\nProstor, kde je nezbytné sebrat redBull a steak před tím, než vyrazíte na led",240,130);
                 break;
             case "obchod":
                 prostor = new Prostor("obchod", "v obchodě",
-                "\nProstor, kde je nezbytné vzít si hokejku a brusle před tím, než vyrazíte na led");
+                "\nProstor, kde je nezbytné vzít si hokejku a brusle před tím, než vyrazíte na led",240,45);
                 break;
             case "stadion":
                 prostor = new Prostor("stadion", "na stadionu", 
-                "\nProstor, jenž je vaším cílem a zahrajete si zde hokej, nejdřív se ale musíte posilnit");
+                "\nProstor, jenž je vaším cílem a zahrajete si zde hokej, nejdřív se ale musíte posilnit",0,0);
                 break;
         }
         return prostor;
@@ -131,15 +134,15 @@ public class HerniPlan {
         
         
         // věci se umístí do patřičných prostorů
-        prostor[1].vlozVec(new Vec ("kasna", false));
-        prostor[1].vlozVec(new Vec ("lavicka", false));
-        prostor[1].vlozVec(new Vec ("kytka", true));
-        prostor[2].vlozVec(new Vec ("redBull", true));
-        prostor[2].vlozVec(new Vec ("steak", true));
-        prostor[2].vlozVec(new Vec ("zidle", false));
-        prostor[2].vlozVec(new Vec ("stul", false));
-        prostor[3].vlozVec(new Vec ("hokejka", true));
-        prostor[3].vlozVec(new Vec ("brusle", true));
+        prostor[1].vlozVec(new Vec ("kasna", false,"kasna.jpg"));
+        prostor[1].vlozVec(new Vec ("lavicka", false,"lavicka.jpg"));
+        prostor[1].vlozVec(new Vec ("kytka", true,"kytka.jpg"));
+        prostor[2].vlozVec(new Vec ("redBull", true,"redbul.jpg"));
+        prostor[2].vlozVec(new Vec ("steak", true,"maso.jpg")); 
+        prostor[2].vlozVec(new Vec ("zidle", false,"zidle.jpg"));
+        prostor[2].vlozVec(new Vec ("stul", false,"stul.jpg"));
+        prostor[3].vlozVec(new Vec ("hokejka", true,"hokejka.jpg")); 
+        prostor[3].vlozVec(new Vec ("brusle", true,"brusle.jpg")); 
     }
     
     /**
@@ -167,6 +170,12 @@ public class HerniPlan {
      */
     public void setAktualniProstor(Prostor prostor) {
         this.aktualniProstor = prostor;
+    }
+    
+    @Override
+    public void notifyObservers(){
+        setChanged();
+        super.notifyObservers();
     }
     
 }

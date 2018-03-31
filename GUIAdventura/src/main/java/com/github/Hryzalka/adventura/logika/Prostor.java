@@ -1,4 +1,5 @@
 package com.github.Hryzalka.adventura.logika;
+
 import java.util.*;
 
 /**
@@ -20,6 +21,8 @@ public class Prostor {
     private String uvodniPopis;
     private Set<Prostor> vychody;           // obsahuje seznam sousedních místností
     private List<Vec> seznamVeci;           // obsahuje list všech viditelných předmětů v prostoru
+    private double x;
+    private double y;
 
     /**
      * Vytvoření prostoru se zadaným popisem, např. "kuchyň", "hala", "trávník
@@ -29,12 +32,13 @@ public class Prostor {
      * víceslovný název bez mezer.
      * @param popis Popis prostoru.
      */
-    public Prostor(String nazev, String kratky, String uvodni) {
+    public Prostor(String nazev, String kratky, String uvodni, double x, double y) {
         this.nazev = nazev;
         this.kratkyPopis = kratky;
         this.uvodniPopis = uvodni;
         vychody = new HashSet<>();
-   
+        this.x = x;
+        this.y = y;
         seznamVeci = new ArrayList<Vec>();
     }
 
@@ -159,6 +163,8 @@ public class Prostor {
         }
         return null;  // prostor nenalezen
     }
+    
+    
 
     /**
      * Vrací kolekci obsahující prostory, se kterými tento prostor sousedí.
@@ -179,17 +185,17 @@ public class Prostor {
      *
      * @return seznam objektů.
      */
-    public Collection<Vec> getSeznamVeci() {
+    public List<Vec> getSeznamVeci(){
         return seznamVeci;
     }
-    
+
     /**
      * Metoda vloží věc do prostoru
      *
      * @param vkladana  vkládaná věc
      * @return true     pokud se ji podaří vložit
      */
-    public boolean vlozVec(Vec vkladana){
+    public boolean vlozVec(Vec vkladana) {
         seznamVeci.add(vkladana);
         return true;
     }
@@ -228,5 +234,24 @@ public class Prostor {
         }
         return hledana;
     }
+    
+    public double getX() {
+		return x;
+	}
+
+	public double getY() {
+		return y;
+	}
+        
+        public String seznamVychodu() 
+    {
+        String vracenyText = "vychody:";
+        for (Prostor sousedni : vychody) {
+             vracenyText += " " + sousedni.getNazev();
+        }
+        return vracenyText;
+    }
+        
+        
 
 }
