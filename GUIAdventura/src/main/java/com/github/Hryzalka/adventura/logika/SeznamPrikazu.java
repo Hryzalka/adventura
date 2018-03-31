@@ -1,4 +1,5 @@
 package com.github.Hryzalka.adventura.logika;
+
 import java.util.HashMap;
 import java.util.Map;
 

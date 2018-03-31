@@ -1,4 +1,5 @@
 package com.github.Hryzalka.adventura.logika;
+
 /**
  *  Třída PrikazNapoveda implementuje pro hru příkaz napoveda.
  *  Tato třída je součástí jednoduché textové hry.
